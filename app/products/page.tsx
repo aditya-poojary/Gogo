@@ -1,7 +1,7 @@
 //
 
 import React from "react";
-import { Card, CardContent, Typography, Divider } from "@mui/material";
+import { Card, Typography, Divider } from "@mui/material";
 
 const ProductDescription = () => {
   return (
@@ -25,11 +25,8 @@ const ProductDescription = () => {
                 className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-110"
               />
             </div>
-            {/* <CardContent>
-              <Typography variant="body2" className="text-center text-gray-600">
-                Stunning Product Image
-              </Typography>
-            </CardContent> */}
+            
+           
           </Card>
         </div>
 

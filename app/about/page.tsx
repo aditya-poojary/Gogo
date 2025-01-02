@@ -11,13 +11,12 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import GroupsIcon from "@mui/icons-material/Groups";
-import ForestIcon from "@mui/icons-material/Forest";
-import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
-import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
+
+import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
+
 import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
-import PublicIcon from "@mui/icons-material/Public";
+
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 
 const AboutUsPageContainer = styled(Container)({
   marginTop: "50px",
