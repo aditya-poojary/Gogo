@@ -93,19 +93,16 @@ function ResponsiveAppBar() {
                 {pages.map((page) => (
                   <Button
                     key={page.name}
+                    component={NavLink}
+                    to={page.path}
                     sx={{
-                      color: "black",
                       margin: "0 10px",
                       fontWeight: "500",
                       textTransform: "none",
-                      "&:hover": { color: "#FF4500" },
                       fontFamily: "'Poppins', sans-serif",
+                      color: "black",
+                      "&:hover": { color: "#FF4500" },
                     }}
-                    component={NavLink}
-                    to={page.path}
-                    style={({ isActive }) => ({
-                      color: isActive ? "#FF4500" : "black",
-                    })}
                   >
                     {page.icon}
                     <span style={{ marginLeft: "8px" }}>{page.name}</span>

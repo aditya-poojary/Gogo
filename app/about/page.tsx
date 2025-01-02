@@ -79,17 +79,15 @@ const MissionCard = styled(Card)({
   textAlign: "center",
   padding: "20px",
   transition: "transform 0.3s ease, box-shadow 0.3s ease",
-  "&:hover": {
-    transform: "scale(1.05)",
-    boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)", // Smooth hover shadow effect
-  },
   borderRadius: "12px",
   backgroundColor: "#FFFFFF",
   boxShadow: "0 6px 12px rgba(0, 0, 0, 0.05)", // Light shadow for the cards
   "&:hover": {
-    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)", // Enhanced shadow on hover
+    transform: "scale(1.05)",
+    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)", // Enhanced shadow and transform on hover
   },
 });
+
 
 const AboutUsPage = () => {
   return (

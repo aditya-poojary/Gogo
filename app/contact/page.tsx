@@ -34,16 +34,17 @@ const Header = styled(Box)({
   marginBottom: "60px",
 });
 
+
 const Card = styled(Box)({
-  backgroundColor: "#fff",
+  backgroundColor: "#FFFFFF",
   padding: "40px 20px",
   borderRadius: "16px",
-  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
   transition: "transform 0.3s ease",
   "&:hover": {
-    transform: "translateY(-10px)",
+    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)", // Enhanced shadow on hover
   },
 });
+
 
 const FloatingButton = styled(Box)({
   position: "fixed",
@@ -79,7 +80,7 @@ const ContactPage = () => {
           variant="subtitle1"
           sx={{ marginTop: "10px", color: "gray" }}
         >
-          We'd love to hear from you and collaborate.
+          We&apos;d love to hear from you and collaborate.
         </Typography>
       </Header>
 
