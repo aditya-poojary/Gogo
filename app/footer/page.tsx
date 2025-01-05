@@ -2,6 +2,7 @@
 import React from "react";
 import { AppBar, Box, Typography, Link, IconButton } from "@mui/material";
 import { Facebook, Twitter, LinkedIn, Instagram } from "@mui/icons-material"; // Social media icons
+import Image from "next/image"; // Import Image from Next.js
 
 function Footer() {
   return (
@@ -26,10 +27,12 @@ function Footer() {
         }}
       >
         {/* Logo on Top (optional, and can be reduced) */}
-        <img
+        <Image
           src="/logo.png"
           alt="GOGO Energy Logo"
-          style={{ height: 80, transition: "transform 0.3s ease" }} // Add transition for logo
+          width={100} // Adjust width as needed
+          height={80} // Adjust height as needed
+          style={{ transition: "transform 0.3s ease" }} // Add transition for logo
           className="footer-logo"
         />
 

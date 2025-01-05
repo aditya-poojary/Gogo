@@ -11,12 +11,10 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import GroupsIcon from "@mui/icons-material/Groups";
-
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
-
 import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
-
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import Image from "next/image"; // Import Image component from next/image
 
 const AboutUsPageContainer = styled(Container)({
   marginTop: "50px",
@@ -88,10 +86,9 @@ const MissionCard = styled(Card)({
   },
 });
 
-
 const AboutUsPage = () => {
   return (
-    <AboutUsPageContainer maxWidth="lg">
+    <AboutUsPageContainer maxWidth="lg" id="about">
       {/* About Us Section */}
       <SectionTitle variant="h3">About Our Company</SectionTitle>
       <AboutUsContent>
@@ -133,7 +130,13 @@ const AboutUsPage = () => {
         </Box>
 
         <AboutUsImage>
-          <img src="/team.png" alt="Our Team" />
+          <Image
+            src="/team.png"
+            alt="Our Team"
+            width={700}
+            height={450}
+            style={{ borderRadius: "12px" }}
+          />
         </AboutUsImage>
       </AboutUsContent>
 
@@ -199,7 +202,6 @@ const AboutUsPage = () => {
       </Grid>
 
       {/* Vision Section */}
-
       <Box
         sx={{ marginTop: "70px", marginBottom: "50px", textAlign: "center" }}
       >

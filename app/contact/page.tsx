@@ -70,7 +70,7 @@ const IconRow = styled(Box)({
 // Component
 const ContactPage = () => {
   return (
-    <ContactPageContainer maxWidth="lg">
+    <ContactPageContainer maxWidth="lg" id="contact-us">
       {/* Header Section */}
       <Header>
         <Typography variant="h3" fontWeight="bold">

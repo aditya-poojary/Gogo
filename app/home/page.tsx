@@ -36,7 +36,7 @@ const HeroSection = styled("section")({
   borderBottom: "5px solid #fff",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "scroll",
-  backgroundSize: "cover",
+
   "@media (min-width: 768px)": {
     backgroundAttachment: "fixed",
   },
@@ -82,7 +82,7 @@ const ShapeDivider = styled("div")({
 
 const HomePage = () => {
   return (
-    <div className="mt-4">
+    <div className="mt-4" id="home">
       {/* Hero Section */}
       <HeroSection>
         {/* Tagline "Revolutionizing the way you ride" */}
