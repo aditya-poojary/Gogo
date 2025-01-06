@@ -12,12 +12,15 @@ import {
 import { styled } from "@mui/system";
 
 // Styled Components
-const ContactPageContainer = styled(Container)({
+const ContactPageContainer = styled(Container)(({ theme }) => ({
   marginTop: "50px",
   padding: "50px 20px",
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "30px 10px",
+  },
+}));
 
-const GridBackground = styled(Box)({
+const GridBackground = styled(Box)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "30px",
@@ -27,26 +30,35 @@ const GridBackground = styled(Box)({
   background: "linear-gradient(145deg, #f5f5f5, #ddd)",
   borderRadius: "12px",
   boxShadow: "0 12px 30px rgba(0, 0, 0, 0.1)",
-});
+  [theme.breakpoints.down("md")]: {
+    gridTemplateColumns: "1fr",
+    gap: "20px",
+    padding: "40px 15px",
+  },
+}));
 
-const Header = styled(Box)({
+const Header = styled(Box)(({ theme }) => ({
   textAlign: "center",
   marginBottom: "60px",
-});
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "40px",
+  },
+}));
 
-
-const Card = styled(Box)({
+const Card = styled(Box)(({ theme }) => ({
   backgroundColor: "#FFFFFF",
   padding: "40px 20px",
   borderRadius: "16px",
   transition: "transform 0.3s ease",
   "&:hover": {
-    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)", // Enhanced shadow on hover
+    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "30px 15px",
+  },
+}));
 
-
-const FloatingButton = styled(Box)({
+const FloatingButton = styled(Box)(({ theme }) => ({
   position: "fixed",
   bottom: "30px",
   right: "30px",
@@ -58,14 +70,20 @@ const FloatingButton = styled(Box)({
   "&:hover": {
     transform: "scale(1.1)",
   },
-});
+  [theme.breakpoints.down("xs")]: {
+    bottom: "20px",
+    right: "20px",
+    padding: "12px",
+  },
+}));
 
-const IconRow = styled(Box)({
+const IconRow = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   gap: "40px",
   marginTop: "40px",
-});
+  flexWrap: "wrap",
+}));
 
 // Component
 const ContactPage = () => {
