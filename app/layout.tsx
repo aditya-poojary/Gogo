@@ -24,6 +24,23 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gogo Energy",
   description: "Revolutionizing the way you ride",
+  keywords:
+    "electric vehicles, clean energy, Gogo Energy, sustainable transport",
+  authors: [{ name: "Rohit Thakur", url: "https://gogoenergy.com" }],
+  openGraph: {
+    title: "Gogo Energy - Revolutionizing the Way You Ride",
+    description:
+      "Discover innovative, sustainable energy solutions for modern transportation.",
+    url: "https://gogoenergy.com",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Gogo Energy",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -34,15 +51,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Global Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="electric vehicles, clean energy, Gogo Energy, sustainable transport"
+        />
+        <meta name="author" content="Rohit Thakur" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Gogo Energy - Revolutionizing the Way You Ride"
+        />
+        <meta
+          property="og:description"
+          content="Discover innovative, sustainable energy solutions for modern transportation."
+        />
+        <meta property="og:url" content="https://gogoenergy.com" />
+        <meta
+          property="og:image"
+          content="https://gogoenergy.com/og-image.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gogo Energy" />
+        <meta
+          name="twitter:description"
+          content="Revolutionizing the way you ride with Gogo Energy."
+        />
+        <meta
+          name="twitter:image"
+          content="https://gogoenergy.com/og-image.png"
+        />
+
+        {/* Favicon */}
         <link rel="icon" href="/logo.png" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         <ResponsiveAppBar />
-
         {children}
-
         <Footer />
       </body>
     </html>
