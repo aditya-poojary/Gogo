@@ -23,21 +23,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Gogo Energy",
-  description: "Revolutionizing the way you ride",
+  description:
+    "Revolutionizing the way you ride with sustainable and innovative energy solutions.",
   keywords:
     "electric vehicles, clean energy, Gogo Energy, sustainable transport",
-  authors: [{ name: "Rohit Thakur", url: "https://gogoenergy.com" }],
+  authors: [{ name: "Gogo Energy Team", url: "https://gogoenergy.in" }],
   openGraph: {
     title: "Gogo Energy - Revolutionizing the Way You Ride",
     description:
       "Discover innovative, sustainable energy solutions for modern transportation.",
-    url: "https://gogoenergy.com",
+    url: "https://gogoenergy.in",
     images: [
       {
-        url: "/logo.png",
+        url: "https://gogoenergy.in/logo.png",
         width: 1200,
         height: 630,
-        alt: "Gogo Energy",
+        alt: "Gogo Energy Logo",
       },
     ],
   },
@@ -57,7 +58,7 @@ export default function RootLayout({
           name="keywords"
           content="electric vehicles, clean energy, Gogo Energy, sustainable transport"
         />
-        <meta name="author" content="Rohit Thakur" />
+        <meta name="author" content="Gogo Energy Team" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -67,21 +68,35 @@ export default function RootLayout({
           property="og:description"
           content="Discover innovative, sustainable energy solutions for modern transportation."
         />
-        <meta property="og:url" content="https://gogoenergy.com" />
-        <meta
-          property="og:image"
-          content="https://gogoenergy.com/og-image.png"
-        />
+        <meta property="og:url" content="https://gogoenergy.in" />
+        <meta property="og:image" content="https://gogoenergy.in/logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Gogo Energy" />
         <meta
           name="twitter:description"
           content="Revolutionizing the way you ride with Gogo Energy."
         />
-        <meta
-          name="twitter:image"
-          content="https://gogoenergy.com/og-image.png"
-        />
+        <meta name="twitter:image" content="https://gogoenergy.in/logo.png" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Gogo Energy",
+            url: "https://gogoenergy.in",
+            logo: "https://gogoenergy.in/logo.png",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91 83559 08284",
+              contactType: "Customer Service",
+            },
+            sameAs: [
+              "https://www.facebook.com/GogoEnergy",
+              "https://www.instagram.com/GogoEnergy",
+            ],
+          })}
+        </script>
 
         {/* Favicon */}
         <link rel="icon" href="/logo.png" type="image/png" />
