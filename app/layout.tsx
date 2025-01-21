@@ -9,7 +9,7 @@ export const metadata = {
   keywords: "Gogo Energy, electric vehicles, clean energy, sustainability",
   author: "Gogo Energy",
   url: "https://www.gogoenergy.com",
-  image: "/logo.png",
+  image: "/logo.png", // Ensure this image is in the public folder
 };
 
 export default function RootLayout({
@@ -30,9 +30,35 @@ export default function RootLayout({
         {/* Open Graph Metadata */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content={metadata.image} />
+        <meta property="og:image" content={metadata.url + metadata.image} />
         <meta property="og:url" content={metadata.url} />
         <meta property="og:type" content="website" />
+
+        {/* Twitter Card Metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={metadata.url + metadata.image} />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Gogo Energy",
+              url: metadata.url,
+              logo: metadata.url + metadata.image,
+              description: metadata.description,
+              sameAs: [
+                "https://www.facebook.com/gogoenergy",
+                "https://www.twitter.com/gogoenergy",
+                "https://www.linkedin.com/company/gogoenergy",
+              ],
+            }),
+          }}
+        />
 
         {/* Favicon */}
         <link rel="icon" href={metadata.image} type="image/png" />
@@ -40,8 +66,13 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </head>
       <body>
+        {/* Navigation Bar */}
         <ResponsiveAppBar />
+
+        {/* Main Content */}
         <main>{children}</main>
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>
