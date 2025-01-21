@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.css"; // Ensure global styles are applied correctly
 import ResponsiveAppBar from "./navbar/page";
 import Footer from "./footer/page";
 
@@ -31,10 +31,11 @@ export default function RootLayout({
 
         {/* Favicon */}
         <link rel="icon" href="/logo.png" type="image/png" />
+        <title>{metadata.title}</title>
       </head>
       <body>
         <ResponsiveAppBar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
