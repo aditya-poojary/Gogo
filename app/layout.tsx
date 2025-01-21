@@ -1,4 +1,4 @@
-import "./globals.css"; // Ensure global styles are applied correctly
+import "./globals.css";
 import ResponsiveAppBar from "./navbar/page";
 import Footer from "./footer/page";
 
@@ -31,6 +31,17 @@ export default function RootLayout({
 
         {/* Favicon */}
         <link rel="icon" href="/logo.png" type="image/png" />
+
+        {/* Open Graph Metadata */}
+        <meta property="og:title" content="Gogo Energy" />
+        <meta
+          property="og:description"
+          content="Revolutionizing the way you ride with sustainable energy solutions."
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://www.gogoenergy.com" />
+        <meta property="og:type" content="website" />
+
         <title>{metadata.title}</title>
       </head>
       <body>
