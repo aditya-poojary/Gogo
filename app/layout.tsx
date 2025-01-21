@@ -6,6 +6,10 @@ export const metadata = {
   title: "Gogo Energy",
   description:
     "Revolutionizing the way you ride with sustainable energy solutions.",
+  keywords: "Gogo Energy, electric vehicles, clean energy, sustainability",
+  author: "Gogo Energy",
+  url: "https://www.gogoenergy.com",
+  image: "/logo.png",
 };
 
 export default function RootLayout({
@@ -19,28 +23,19 @@ export default function RootLayout({
         {/* Essential Meta Tags */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="Revolutionizing the way you ride with sustainable energy solutions."
-        />
-        <meta
-          name="keywords"
-          content="Gogo Energy, electric vehicles, clean energy, sustainability"
-        />
-        <meta name="author" content="Gogo Energy" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/logo.png" type="image/png" />
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="author" content={metadata.author} />
 
         {/* Open Graph Metadata */}
-        <meta property="og:title" content="Gogo Energy" />
-        <meta
-          property="og:description"
-          content="Revolutionizing the way you ride with sustainable energy solutions."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://www.gogoenergy.com" />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={metadata.image} />
+        <meta property="og:url" content={metadata.url} />
         <meta property="og:type" content="website" />
+
+        {/* Favicon */}
+        <link rel="icon" href={metadata.image} type="image/png" />
 
         <title>{metadata.title}</title>
       </head>
