@@ -36,28 +36,50 @@ const HeroSection = styled("section")({
   borderBottom: "5px solid #fff",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "scroll",
+  
 
   "@media (min-width: 768px)": {
     backgroundAttachment: "fixed",
   },
 });
 
-// "Revolutionizing the way you ride" tagline styling (left aligned)
+// "Revolutionizing the way you ride" tagline styling (responsive)
 const TaglineText = styled(Typography)({
   fontFamily: "Poppins, sans-serif",
   fontWeight: "bold",
-  fontSize: "47px",
-  color: "#FF4500", // Red highlight
+  fontSize: "60px", // Desktop default
+  background: "linear-gradient(to bottom, black -30%, #FF4500 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
   animation: `${fadeIn} 2s ease-out`,
-  letterSpacing: "2px",
-  lineHeight: "1.4",
-  textAlign: "left",
-  marginBottom: "8px",
-  maxWidth: "600px",
-  alignSelf: "flex-start",
+  letterSpacing: "3px",
+  lineHeight: "1.5",
+  textAlign: "center",
+  marginBottom: "16px",
+  maxWidth: "800px",
+  alignSelf: "center",
+  display: "flex",
+  justifyContent: "center",
+  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+
+  // Tablet view
+  "@media (max-width: 1024px)": {
+    fontSize: "45px",
+    letterSpacing: "2px",
+    maxWidth: "600px",
+    marginBottom: "12px",
+  },
+
+  // Mobile view
+  "@media (max-width: 640px)": {
+    fontSize: "32px",
+    letterSpacing: "1.5px",
+    maxWidth: "100%",
+    marginBottom: "8px",
+    lineHeight: "1.3",
+  },
 });
 
-// "Coming Soon" text styling (smaller and below tagline)
 const ComingSoonText = styled(Typography)({
   fontFamily: "Montserrat, sans-serif",
   fontWeight: "bold",
@@ -70,7 +92,6 @@ const ComingSoonText = styled(Typography)({
   alignSelf: "flex-start",
 });
 
-// Shape Divider for modern section transition
 const ShapeDivider = styled("div")({
   position: "absolute",
   bottom: 0,
@@ -86,9 +107,8 @@ const HomePage = () => {
       {/* Hero Section */}
       <HeroSection>
         {/* Tagline "Revolutionizing the way you ride" */}
-        <TaglineText variant="h2">
-          Revolutionizing the way you ride.
-        </TaglineText>
+        <TaglineText variant="h2">Revolutionizing the way</TaglineText>
+        <TaglineText variant="h2">you ride.</TaglineText>
 
         {/* "Coming Soon" text */}
         <ComingSoonText variant="h2">Coming Soon ....</ComingSoonText>

@@ -17,9 +17,9 @@ import Image from "next/image"; // Import Image from Next.js for optimization
 
 const pages = [
   { name: "Home", icon: <HomeIcon />, id: "home" },
-  { name: "Product Description", icon: <DescriptionIcon />, id: "products" },
+  { name: "Product", icon: <DescriptionIcon />, id: "products" },
   { name: "About Us", icon: <InfoIcon />, id: "about" },
-  { name: "Contact Us", icon: <PhoneIcon />, id: "contact-us" },
+  { name: "Contact", icon: <PhoneIcon />, id: "contact-us" },
 ];
 
 function scrollToSection(id: string) {
@@ -72,7 +72,7 @@ function ResponsiveAppBar() {
                   sx={{ margin: "0 10px", color: "#4a4a4a" }}
                   onClick={() => scrollToSection(page.id)}
                 >
-                  {page.icon}
+                  {/* {page.icon} */}
                   <span style={{ marginLeft: "8px" }}>{page.name}</span>
                 </Button>
               ))}
