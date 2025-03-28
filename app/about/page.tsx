@@ -9,7 +9,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled, textAlign } from "@mui/system";
 import GroupsIcon from "@mui/icons-material/Groups";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
@@ -18,6 +18,10 @@ import Image from "next/image"; // Import Image component from next/image
 
 const AboutUsPageContainer = styled(Container)({
   marginTop: "50px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+  padding: "20px",
   backgroundColor: "#FFFFFF", // Set background to white
 });
 
@@ -26,6 +30,7 @@ const SectionTitle = styled(Typography)({
   fontWeight: "bold",
   fontSize: "36px", // Adjusted to a slightly smaller size for better fit
   marginBottom: "20px", // Reduced margin for better spacing
+  marginTop: "20px", // Reduced margin for better spacing
   textAlign: "center",
   color: "#333333", // Slightly lighter shade of black for a softer appearance
   transition: "color 0.3s ease", // Smooth color transition
@@ -37,20 +42,19 @@ const SectionTitle = styled(Typography)({
 const AboutUsContent = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
+  flexDirection:"row-reverse",
   alignItems: "center",
   marginBottom: "50px",
-  background: "linear-gradient(to right, #FFEFBA, #FFE7C7)", // Soft gradient for background
   padding: "40px",
-  borderRadius: "12px",
-  boxShadow: "0 12px 24px rgba(0, 0, 0, 0.15)", // Enhanced shadow for a more 3D effect
+  textAlign: "justify",
+  // borderRadius: "12px",
+  // boxShadow: "0 12px 24px rgba(0, 0, 0, 0.15)", // Enhanced shadow for a more 3D effect
   transition: "all 0.3s ease", // Smooth transition for any changes
-  "&:hover": {
-    transform: "scale(1.02)", // Slight scale on hover
-    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)", // Darker shadow on hover
-  },
+ 
   "@media (max-width: 768px)": {
-    flexDirection: "column", // Stack items vertically on smaller screens
+    flexDirection: "column-reverse", // Stack items vertically on smaller screens
     alignItems: "center",
+    textAlign: "center",
   },
 });
 
@@ -90,48 +94,32 @@ const AboutUsPage = () => {
   return (
     <AboutUsPageContainer maxWidth="lg" id="about">
       {/* About Us Section */}
-      <SectionTitle variant="h3">About Our Company</SectionTitle>
+      <SectionTitle className="" variant="h3">About <span className="text-orange-500">Us</span></SectionTitle>
       <AboutUsContent>
         <Box flex={1}>
           <Typography
             variant="body1"
             sx={{
               fontFamily: "Roboto, sans-serif",
-              fontWeight: "regular",
+              fontWeight:"bold",
               fontSize: "16px",
+            //  flex:1,
               lineHeight: "1.8",
-              color: "#555555", // Lighter gray for better readability
+              color: "#000", // Lighter gray for better readability
             }}
           >
-            At GOGO, we’re committed to sustainability. By transitioning to
-            electric vehicles (EVs), we’re not only offering a profitable
-            solution but also contributing to a cleaner, greener future. Our
-            mission is to reduce carbon emissions, protect natural resources,
-            and play an active role in India’s carbon-free vision.
-          </Typography>
+At GOGO, we are committed to sustainability through innovative electric vehicles (EVs) that reduce carbon emissions, conserve resources, and align with India’s carbon-free vision. Our team combines expertise from prestigious projects like Formula Bharat, Hyperloop Transportation, and Satellite development, driving forward advanced, sustainable solutions for a cleaner, greener future.      </Typography>
 
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "Roboto, sans-serif",
-              fontWeight: "regular",
-              fontSize: "16px",
-              lineHeight: "1.8",
-              color: "#555555",
-              marginTop: "20px", // Spacing between paragraphs
-            }}
-          >
-            Our team brings together individuals from diverse and distinguished
-            backgrounds, including experience in Formula Bharat, Hyperloop
-            Transportation, and Satellite development. We harness this
-            collective expertise to drive innovation and shape a sustainable
-            future.
-          </Typography>
+
         </Box>
+
+   {/* <div className=" w-full md:w-1/2">
+   <img className="w-full h-full object-cover" src="/image3.png" alt="" />
+   </div> */}
 
         <AboutUsImage>
           <Image
-            src="/team.png"
+            src="/image3.png"
             alt="Our Team"
             width={700}
             height={450}
