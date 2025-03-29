@@ -15,14 +15,14 @@ return {specs,details}
       {/* Heading: Product Description */}
       <Typography
         variant="h4"
-        className="text-center mt-5 font-bold text-black  pb-8"
+        className="text-center mt-2 font-bold text-black  "
       >
         Our <span className=" text-orange-500">Products</span> 
       </Typography>
 
       <div className="flex flex-col    md:flex-row items-center justify-between gap-8">
         {/* Right side: Product Image */}
-        <div className="w-full md:scale-75    h-86 md:w-1/2">
+        <div className="w-full scale-75 md:w-1/2">
         <img src="/image.png" alt="" className=" h-full w-full object-cover" />
         </div>
 
