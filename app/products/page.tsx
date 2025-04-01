@@ -11,16 +11,16 @@ return {specs,details}
     createData('Range','35-40 km/Swap'),
   ]
   return (
-    <div className="my-12 bg-white py-8 px-6" id="products" >
+    <div className=" pt-[87px] bg-white px-6" id="products" >
       {/* Heading: Product Description */}
       <Typography
         variant="h4"
-        className="text-center mt-2 font-bold text-black  "
+        className="text-center mt-2 font-bold  text-black  "
       >
         Our <span className=" text-orange-500">Products</span> 
       </Typography>
 
-      <div className="flex flex-col    md:flex-row items-center justify-between gap-8">
+      <div className="flex flex-col    md:flex-row items-center justify-between gap-8 ">
         {/* Right side: Product Image */}
         <div className="w-full scale-75 md:w-1/2">
         <img src="/image.png" alt="" className=" h-full w-full object-cover" />

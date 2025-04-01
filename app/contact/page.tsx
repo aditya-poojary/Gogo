@@ -125,7 +125,7 @@ const SectionTitle = styled(Typography)({
 // Component
 const ContactPage = () => {
   return (
-    <ContactPageContainer maxWidth="lg" id="contact-us">
+    <ContactPageContainer maxWidth="lg" id="contact-us" className="pt-[87px] bg-white px-6">
       <SectionTitle variant="h4" sx={{ fontWeight: 'bold' }}>Reach Out <span className="text-orange-500">Us</span> </SectionTitle>
       
       <ContactBox>

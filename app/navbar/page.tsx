@@ -41,9 +41,13 @@ function ResponsiveAppBar() {
     <div>
       <AppBar
         position="fixed"
+        className=""
         sx={{
-          backgroundColor: "#ffffff",
+          background: "rgba(0, 0, 0, 0)", // Semi-transparent white
+          backdropFilter: "blur(2px)",
+          WebkitBackdropFilter: "blur(5px)", // For Safari support
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>

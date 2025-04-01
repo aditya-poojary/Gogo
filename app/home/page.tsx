@@ -1,129 +1,84 @@
 "use client";
 import React from "react";
-import { Typography } from "@mui/material";
-import { styled, keyframes } from "@mui/system";
 import About from "../about/page";
 import Contact from "../contact/page";
 import ProductDescription from "../products/page";
 
-// Keyframes for text animation
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-// HeroSection with parallax effect and background overlay
-const HeroSection = styled("section")({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flexDirection: "column",
-  height: "100vh",
-  minHeight: "700px",
-  backgroundImage: `url("/hero2.jpeg")`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  color: "white",
-  textAlign: "center",
-  padding: "0 20px",
-  position: "relative",
-  borderBottom: "5px solid #fff",
-  backgroundRepeat: "no-repeat",
-  backgroundAttachment: "scroll",
-  
-
-  "@media (min-width: 768px)": {
-    backgroundAttachment: "fixed",
-  },
-});
-
-// "Revolutionizing the way you ride" tagline styling (responsive)
-const TaglineText = styled(Typography)({
-  fontFamily: "Poppins, sans-serif",
-  fontWeight: "bold",
-  fontSize: "60px", // Desktop default
-  background: "linear-gradient(to bottom, black -30%, #FF4500 100%)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  animation: `${fadeIn} 2s ease-out`,
-  letterSpacing: "3px",
-  lineHeight: "1.5",
-  textAlign: "center",
-  marginBottom: "16px",
-  maxWidth: "800px",
-  alignSelf: "center",
-  display: "flex",
-  justifyContent: "center",
-  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
-
-  // Tablet view
-  "@media (max-width: 1024px)": {
-    fontSize: "45px",
-    letterSpacing: "2px",
-    maxWidth: "600px",
-    marginBottom: "12px",
-  },
-
-  // Mobile view
-  "@media (max-width: 640px)": {
-    fontSize: "32px",
-    letterSpacing: "1.5px",
-    maxWidth: "100%",
-    marginBottom: "8px",
-    lineHeight: "1.3",
-  },
-});
-
-const ComingSoonText = styled(Typography)({
-  fontFamily: "Montserrat, sans-serif",
-  fontWeight: "bold",
-  fontSize: "30px",
-  color: "#FFFFFF",
-  animation: `${fadeIn} 1.5s ease-out`,
-  letterSpacing: "1.5px",
-  lineHeight: "1.2",
-  textAlign: "left",
-  alignSelf: "flex-start",
-});
-
-const ShapeDivider = styled("div")({
-  position: "absolute",
-  bottom: 0,
-  width: "100%",
-  height: "100px",
-  backgroundColor: "white",
-  clipPath: "polygon(0% 100%, 100% 0%, 100% 100%)",
-});
-
 const HomePage = () => {
   return (
-    <div className="mt-4" id="home">
-      {/* Hero Section */}
-      <HeroSection>
-        {/* Tagline "Revolutionizing the way you ride" */}
-        <TaglineText variant="h2">Revolutionizing the way</TaglineText>
-        <TaglineText variant="h2">you ride.</TaglineText>
+    <div id="home">
+      <section className="relative  min-h-[700px] flex items-center justify-center overflow-hidden border-b-[5px] border-white w-full bg-hero-pic bg-cover bg-center">
+   
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ 
+            backgroundImage: 'url("/hero2.jpeg")',
+            backgroundSize: '120% 120%'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40 bg-gradient-to-r from-black/30 to-black/10 "></div>
+        </div>
 
-        {/* "Coming Soon" text */}
-        <ComingSoonText variant="h2">Coming Soon ....</ComingSoonText>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-6xl mx-auto">
+        
+          <br />
+          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#8B0000] to-[#FF4500] bg-clip-text text-transparent leading-tight tracking-wide mb-4 animate-fade-in-down">
+            Revolutionizing the way
+          </h2>
+          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#8B0000] to-[#FF4500] bg-clip-text text-transparent leading-tight tracking-wide mb-8 animate-fade-in-down">
+            you ride.
+          </h2>
+          
 
-        {/* Shape Divider */}
-        <ShapeDivider />
-      </HeroSection>
+          <div className="flex justify-center items-center mt-4">
+            <h2 className="font-bold font-['Montserrat'] text-4xl md:text-5xl text-white tracking-wider animate-fade-in-up">
+              Coming Soon ...
+            </h2>
+          </div>
+        </div>
+
+
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'polygon(0% 100%, 100% 0%, 100% 100%)' }}></div>
+      </section>
 
       <ProductDescription />
 
-      {/* About Section */}
       <About />
 
-      {/* Contact Section */}
+
       <Contact />
+
+      <style jsx global>{`
+        @keyframes fade-in-down {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in-down {
+          animation: fade-in-down 1.5s ease-out forwards;
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 1.5s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 };

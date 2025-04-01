@@ -24,7 +24,7 @@ export default function RootLayout({
         <ResponsiveAppBar />
 
         {/* Main Content */}
-        <main>{children}</main>
+        <main >{children}</main>
 
         {/* Footer */}
         <Footer />
