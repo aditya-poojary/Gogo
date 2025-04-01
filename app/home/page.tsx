@@ -7,22 +7,22 @@ import ProductDescription from "../products/page";
 const HomePage = () => {
   return (
     <div id="home">
-      <section className="relative  min-h-[700px] flex items-center justify-center overflow-hidden border-b-[5px] border-white w-full bg-hero-pic bg-cover bg-center">
+      <section className="relative  min-h-[700px] flex items-center justify-center overflow-hidden  w-full bg-hero-pic bg-cover bg-center">
    
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{ 
             backgroundImage: 'url("/hero2.jpeg")',
-            backgroundSize: '120% 120%'
+            backgroundSize: 'cover',
           }}
         >
-          <div className="absolute inset-0 bg-black/40 bg-gradient-to-r from-black/30 to-black/10 "></div>
+          <div className="absolute  inset-0 bg-black/40 bg-gradient-to-r from-black/30 to-black/10 "></div>
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-6xl mx-auto">
         
           <br />
-          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down">
+          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1  leading-tight tracking-wide mb-4 animate-fade-in-down">
             Revolutionizing the way
           </h2>
           <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#FF8C4E] to-[#640B02] bg-clip-text text-transparent leading-tight tracking-wide mb-8 p-1 animate-fade-in-down">
