@@ -12,6 +12,7 @@ import {
   Info as InfoIcon,
   Phone as PhoneIcon,
   Description as DescriptionIcon,
+  Menu,
 } from "@mui/icons-material";
 import Image from "next/image"; // Import Image from Next.js for optimization
 
@@ -66,7 +67,7 @@ function ResponsiveAppBar() {
 
           {isMobile ? (
             <Button onClick={handleDrawerToggle} sx={{ color: "#4a4a4a" }}>
-              Menu
+              <Menu/>
             </Button>
           ) : (
             <Box sx={{ display: "flex" }}>

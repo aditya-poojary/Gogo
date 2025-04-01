@@ -22,10 +22,10 @@ const HomePage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-6xl mx-auto">
         
           <br />
-          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#8B0000] to-[#FF4500] bg-clip-text text-transparent leading-tight tracking-wide mb-4 animate-fade-in-down">
+          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down">
             Revolutionizing the way
           </h2>
-          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#8B0000] to-[#FF4500] bg-clip-text text-transparent leading-tight tracking-wide mb-8 animate-fade-in-down">
+          <h2 className="font-bold text-6xl md:text-7xl bg-gradient-to-b from-[#FF8C4E] to-[#640B02] bg-clip-text text-transparent leading-tight tracking-wide mb-8 p-1 animate-fade-in-down">
             you ride.
           </h2>
           

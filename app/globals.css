@@ -27,3 +27,6 @@ body {
   background-color: #ff7e0e;
   border-radius: 10px;
 }
+body{
+  overflow-x: hidden;
+}
