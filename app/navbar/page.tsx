@@ -1,21 +1,17 @@
 "use client";
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { Drawer } from "@mui/material";
+import Image from "next/image";
+import { useMediaQuery } from "@mui/material";
 import {
   Home as HomeIcon,
   Info as InfoIcon,
   Phone as PhoneIcon,
   Description as DescriptionIcon,
   Menu,
+  Close as CloseIcon,
 } from "@mui/icons-material";
-import Image from "next/image"; // Import Image from Next.js for optimization
 
+// Define navigation pages with name, icon, and target section ID.
 const pages = [
   { name: "Home", icon: <HomeIcon />, id: "home" },
   { name: "Product", icon: <DescriptionIcon />, id: "products" },
@@ -23,6 +19,7 @@ const pages = [
   { name: "Contact", icon: <PhoneIcon />, id: "contact-us" },
 ];
 
+// Function to scroll smoothly to a page section.
 function scrollToSection(id: string) {
   const section = document.getElementById(id);
   if (section) {
@@ -34,75 +31,95 @@ function ResponsiveAppBar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery("(max-width: 600px)");
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
   return (
-    <div>
-      <AppBar
-        position="fixed"
-        className=""
-        sx={{
-          background: "rgba(0, 0, 0, 0)", // Semi-transparent white
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(5px)", // For Safari support
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          
-        }}
-      >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography
-            variant="h6"
-            sx={{ color: "#4a4a4a", fontWeight: "bold", fontSize: "1.5rem" }}
-          >
+    <div className="relative">
+      {/* Main Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm">
+        <div className="flex justify-between items-center px-6 py-2">
+          {/* Logo */}
+          <div className="flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Company Logo"
-              width={100} // Set width for image
-              height={80} // Set height for image
-              style={{ height: "80px", objectFit: "contain" }}
+              width={100}
+              height={80}
+              className="h-20 w-auto object-contain"
             />
-          </Typography>
+          </div>
 
+          {/* Mobile Menu Button */}
           {isMobile ? (
-            <Button onClick={handleDrawerToggle} sx={{ color: "#4a4a4a" }}>
-              <Menu/>
-            </Button>
+            <button
+              onClick={() => setDrawerOpen(!drawerOpen)}
+              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
           ) : (
-            <Box sx={{ display: "flex" }}>
+            /* Desktop Navigation */
+            <div className="hidden md:flex items-center space-x-4">
               {pages.map((page) => (
-                <Button
+                <button
                   key={page.name}
-                  sx={{ margin: "0 10px", color: "#4a4a4a" }}
                   onClick={() => scrollToSection(page.id)}
+                  className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors text-base font-medium"
                 >
-                  {/* {page.icon} */}
-                  <span style={{ marginLeft: "8px" }}>{page.name}</span>
-                </Button>
+                  {page.name}
+                </button>
               ))}
-            </Box>
+            </div>
           )}
-        </Toolbar>
-      </AppBar>
+        </div>
+      </nav>
 
-      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
-        <Box sx={{ width: 250, padding: "30px 20px" }}>
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 bg-white transform transition-transform duration-300 ease-in-out z-50 ${
+          drawerOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Drawer Header */}
+        <div className="flex justify-between items-center p-6 border-b-2 border-orange-300">
+          <Image
+            src="/logo.png"
+            alt="Company Logo"
+            width={80}
+            height={60}
+            className="h-14 w-auto object-contain"
+          />
+          <button
+            onClick={() => setDrawerOpen(false)}
+            className="p-2 text-black hover:text-gray-300 transition-colors"
+          >
+            <CloseIcon className="h-6 w-6" />
+          </button>
+        </div>
+
+        {/* Drawer Navigation Links */}
+        <div className="flex flex-col p-6 space-y-4">
           {pages.map((page) => (
-            <Button
+            <button
               key={page.name}
               onClick={() => {
                 scrollToSection(page.id);
-                handleDrawerToggle();
+                setDrawerOpen(false);
               }}
-              sx={{ margin: "10px 0", color: "#4a4a4a" }}
+              className="flex items-center px-4 py-3 text-orange-600 hover:bg-white/10 rounded-lg transition-colors text-left"
             >
               {page.icon}
-              <span style={{ marginLeft: "8px" }}>{page.name}</span>
-            </Button>
+              <span className="ml-3">{page.name}</span>
+            </button>
           ))}
-        </Box>
-      </Drawer>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {drawerOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={() => setDrawerOpen(false)}
+        />
+      )}
     </div>
   );
 }
