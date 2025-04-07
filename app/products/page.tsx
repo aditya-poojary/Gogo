@@ -1,16 +1,35 @@
 import React from "react";
 import { Card, Typography, Divider, Table, TableHead, TableRow, TableCell, TableBody, styled } from "@mui/material";
 import {motion} from 'motion/react'
+
 const ProductDescription = () => {
-  const createData=(specs:String,details:String)=>{
-return {specs,details}
+  const createData = (specs: String, details: String) => {
+    // Split details to separate parenthetical content for mobile styling
+    let mainText = details;
+    let parentheticalText = "";
+    
+    const match = details.match(/(.*?)(\(.*?\))(.*)/);
+    if (match) {
+      mainText = match[1] + match[3];
+      parentheticalText = match[2];
+    }
+    
+    return {
+      specs,
+      details,
+      mainText,
+      parentheticalText
+    }
   }
-  const rows=[
-    createData('LoadCapacity','100-120 kg (including rider)'),
+  
+  const rows = [
+    createData('LoadCapacity','100-120 kg (Including rider)'),
     createData('Max Speed','25 km/h (*Subject to change)'),
     createData('Range','35-40 km/Swap'),
   ]
-  const MotionTitle=motion(Typography)
+  
+  const MotionTitle = motion(Typography)
+  
   return (
     <motion.div  initial="hidden" whileInView="visible"  variants={{
       hidden: { x: 50, opacity: 0 },
@@ -48,11 +67,18 @@ return {specs,details}
            {
             rows.map((row,idx)=>(
               <TableRow className="border-0" key={idx}>
-                <TableCell className="font-bold text-lg border-0">
+                <TableCell className="font-bold text-md md:text-lg border-0">
                   {row.specs}
                 </TableCell>
-                 <TableCell className="border-0 text-lg" >
-                  {row.details}
+                <TableCell className="border-0 text-[16px] md:text-lg px-1">
+                  {/* Display content inline with smaller parentheses on mobile */}
+                  <span className="">{row.mainText}
+                  {row.parentheticalText && (
+                    <span className="text-[11px] md:text-lg">
+                      {row.parentheticalText}
+                    </span>
+                  )}
+                  </span>
                 </TableCell>
               </TableRow>
             ))
