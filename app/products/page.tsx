@@ -35,7 +35,7 @@ const ProductDescription = () => {
       hidden: { x: 50, opacity: 0 },
       visible: { x: 0, opacity: 1 },
     }}
-    transition={{ duration: 0.8 }} className=" pt-[87px] bg-white px-6" id="products" >
+    transition={{ duration: 0.8 }} className=" pt-[87px] bg-white" id="products" >
       {/* Heading: Product Description */}
       <MotionTitle initial={{opacity:0,y:50}} whileInView={{opacity:1,y:0}} transition={{duration:0.5}}
         variant="h4"
