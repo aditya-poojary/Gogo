@@ -35,14 +35,14 @@ function ResponsiveAppBar() {
     <div className="relative">
       {/* Main Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm">
-        <div className="flex justify-between items-center px-6 py-2">
+        <div className="flex justify-between items-center px-6 ">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Company Logo"
-              width={100}
-              height={80}
+              width={80}
+              height={70}
               className="h-20 w-auto object-contain"
             />
           </div>
@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
                 <button
                   key={page.name}
                   onClick={() => scrollToSection(page.id)}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors text-base font-medium"
+                  className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors text-base font-medium text-[20px]"
                 >
                   {page.name}
                 </button>

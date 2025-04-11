@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 function Footer() {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: any) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
