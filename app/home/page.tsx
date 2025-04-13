@@ -19,19 +19,19 @@ const HomePage = () => {
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto py-12 sm:py-16">
-        <div className="block sm:hidden">
-  <h2 className="font-bold text-4xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-2 animate-fade-in-down">
-    Revolutionizing
-  </h2>
-  <h2 className="font-bold text-4xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down">
-    the way
-  </h2>
-</div>
-<div className="hidden sm:block">
-  <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down max-w-[90vw] sm:max-w-none">
-    Revolutionizing the way
-  </h2>
-</div>
+          <div className="block sm:hidden">
+            <h2 className="font-bold text-4xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-2 animate-fade-in-down">
+              Revolutionizing
+            </h2>
+            <h2 className="font-bold text-4xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down">
+              the way
+            </h2>
+          </div>
+          <div className="hidden sm:block">
+            <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-b from-[#640B02] to-[#FF8C4E] bg-clip-text text-transparent p-1 leading-tight tracking-wide mb-4 animate-fade-in-down max-w-[90vw] sm:max-w-none">
+              Revolutionizing the way
+            </h2>
+          </div>
 
           <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-b from-[#FF8C4E] to-[#640B02] bg-clip-text text-transparent leading-tight tracking-wide mb-6 sm:mb-8 p-1 animate-fade-in-down max-w-[90vw] sm:max-w-none">
             you ride.

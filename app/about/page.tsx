@@ -48,8 +48,8 @@ const AboutUsPage = () => {
         <p className="text-base sm:text-lg text-gray-700 leading-relaxed md:text-justify text-center">
           At GOGO, we are committed to sustainability through innovative
           electric vehicles that reduce carbon emissions, conserve resources,
-          and align with India&apos;s carbon-free vision. Our team combines expertise
-          from prestigious projects like Formula Bharat, Hyperloop
+          and align with India&apos;s carbon-free vision. Our team combines
+          expertise from prestigious projects like Formula Bharat, Hyperloop
           Transportation, and Satellite development, driving forward advanced,
           sustainable solutions for a cleaner, greener future.
         </p>
@@ -96,10 +96,10 @@ const AboutUsPage = () => {
         <div className="flex justify-center">
           <div className="p-6 w-full md:w-2/3 lg:w-1/2 rounded-lg bg-gradient-to-br from-white to-orange-100 shadow-md transform transition-all duration-500 hover:shadow-lg animate-slide-left">
             <p className="text-center text-gray-800 text-lg leading-relaxed">
-            &quot;Our goal is to offer gig workers hassle-free access to a reliable
-              swapping network, empowering their growth. We are building a
-              robust network with BaaS/EaaS and delivery partners to drive sales
-              and expansion.&quot;
+              &quot;Our goal is to offer gig workers hassle-free access to a
+              reliable swapping network, empowering their growth. We are
+              building a robust network with BaaS/EaaS and delivery partners to
+              drive sales and expansion.&quot;
             </p>
           </div>
         </div>
