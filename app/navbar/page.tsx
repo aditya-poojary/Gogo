@@ -29,7 +29,7 @@ function scrollToSection(id: string) {
 
 function ResponsiveAppBar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <div className="relative">

@@ -1,9 +1,12 @@
+'use client';
+
 import React from "react";
-import { Card, Typography, Divider, Table, TableHead, TableRow, TableCell, TableBody, styled } from "@mui/material";
+import {  Typography, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
 import {motion} from 'motion/react'
+import Image from "next/image";
 
 const ProductDescription = () => {
-  const createData = (specs: String, details: String) => {
+  const createData = (specs: string, details: string) => {
     // Split details to separate parenthetical content for mobile styling
     let mainText = details;
     let parentheticalText = "";
@@ -51,7 +54,7 @@ const ProductDescription = () => {
     transition={{ duration: 0.8 }} className="flex flex-col    md:flex-row items-center justify-between gap-8 ">
         {/* Right side: Product Image */}
         <div className="w-full scale-75 md:w-1/2">
-        <img src="/image.png" alt="" className=" h-full w-full object-cover" />
+        <Image src="/image.png" alt="" className=" h-full w-full object-cover" />
         </div>
 
         {/* Left side: Product Technical Specifications */}

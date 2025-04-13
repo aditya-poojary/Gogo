@@ -10,7 +10,6 @@ import {
   WhatsApp,
   Phone,
   Email,
-  Map,
   PinDrop,
 } from "@mui/icons-material";
 import { styled } from "@mui/system";
