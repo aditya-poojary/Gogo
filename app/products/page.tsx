@@ -71,11 +71,17 @@ const ProductDescription = () => {
           visible: { opacity: 1 },
         }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col    md:flex-row items-center justify-between gap-8 "
+        className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 pb-8"
       >
         {/* Right side: Product Image */}
-        <div className="relative w-full scale-75 md:w-1/2 h-[500px]">
-          <Image src="/image.png" alt="Image" fill className="object-cover" />
+        <div className="relative w-full md:w-1/2 h-[500px] md:h-[600px] flex items-center justify-center">
+          <Image
+            src="/image.png"
+            alt="Image"
+            fill
+            className="object-contain p-2"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
 
         {/* Left side: Product Technical Specifications */}

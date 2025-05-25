@@ -123,6 +123,15 @@ const SectionTitle = styled(Typography)({
 
 // Component
 const ContactPage = () => {
+  // Add social media URLs
+  const socialMediaLinks = [
+    { Icon: LinkedIn, url: "https://www.linkedin.com/company/gogo-energy/" },
+    { Icon: Twitter, url: "https://x.com/gogoenergyIN" },
+    { Icon: Instagram, url: "https://www.instagram.com/gogoenergy.in/" },
+    { Icon: Facebook, url: "https://www.facebook.com/share/15H7B8ZJwz/" },
+    { Icon: WhatsApp, url: "https://wa.me/918355908284" },
+  ];
+
   return (
     <ContactPageContainer
       maxWidth="lg"
@@ -209,25 +218,25 @@ const ContactPage = () => {
               },
             }}
           >
-            {[LinkedIn, Twitter, Instagram, Facebook, WhatsApp].map(
-              (Icon, index) => (
-                <IconButton
-                  key={index}
-                  sx={{
-                    backgroundColor: "#f5f5f5",
-                    color: "#000 ",
-                    "&:hover": {
-                      backgroundColor: "#f97316 ",
-                      color: "#fff",
-                      transform: "translateY(-3px)",
-                    },
-                    transition: "all 0.2s ease",
-                  }}
-                >
-                  <Icon />
-                </IconButton>
-              )
-            )}
+            {socialMediaLinks.map(({ Icon, url }, index) => (
+              <IconButton
+                key={index}
+                onClick={() => window.open(url, "_blank")}
+                sx={{
+                  backgroundColor: "#f5f5f5",
+                  color: "#000 ",
+                  "&:hover": {
+                    backgroundColor: "#f97316 ",
+                    color: "#fff",
+                    transform: "translateY(-3px)",
+                  },
+                  transition: "all 0.2s ease",
+                  cursor: "pointer",
+                }}
+              >
+                <Icon />
+              </IconButton>
+            ))}
           </Box>
           <FloatingButton
             onClick={() => window.open("https://wa.me/918355908284", "_blank")}
